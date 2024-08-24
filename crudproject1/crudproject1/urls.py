@@ -26,8 +26,10 @@ urlpatterns = [
 
     path('delete/<int:id>/',views.delete_data,name="deletedata"),
     path('<int:id>/',views.update_data,name="updatedata"),
-
+    path('add_excel', views.add_students_from_excel, name="add_students_from_excel"),
     path('', views.another_view, name='another_view'),
+    path('gender-distribution/', views.gender_distribution, name='gender_distribution'),
+
     # other url patterns
 ]
 

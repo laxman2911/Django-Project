@@ -6,12 +6,13 @@ from .models import Userlogin
 class StudentRegistration(forms.ModelForm):
     class Meta:
         model=User
-        fields=['name','email','mobile','document']
+        fields=['name','email','mobile','sex','document']
         widgets={
             'name':forms.TextInput(attrs={'class':'form-control'}),
             'email':forms.EmailInput(attrs={'class':'form-control'}),
             'mobile':forms.TextInput(attrs={'class':'form-control'}),
-            'document': forms.ClearableFileInput(attrs={'class': 'form-control'}),
+            'sex': forms.Select(choices=User.SEX_CHOICES),
+            'document': forms.ClearableFileInput(attrs={'class': 'form-control'}),  # Update here
         }
 
 class AnotherForm(forms.ModelForm):

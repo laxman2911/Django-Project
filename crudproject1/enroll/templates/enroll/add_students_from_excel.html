@@ -1,0 +1,23 @@
+{% extends 'enroll/base.html' %}
+
+{% block content %}
+<div class="row mb-3">
+    <div class="col-12 text-right">
+        <a href="/" class="btn btn-primary">Logout</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 offset-sm-3">
+        <h4 class="text-center alert alert-info">Upload Excel to Add Students</h4>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="excel_file">Upload Excel File</label>
+                <input type="file" name="excel_file" class="form-control" accept=".xlsx, .xls">
+            </div>
+            <input type="submit" class="btn btn-success" value="Upload">
+        </form>
+    </div>
+</div>
+{% endblock content %}
